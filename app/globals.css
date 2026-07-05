@@ -1,26 +1,181 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #09090B;
+  --color-foreground: #FAFAFA;
+  --color-muted: #A1A1AA;
+  --color-subtle: #71717A;
+  --color-border: #27272A;
+  --color-surface: #111113;
+  --color-surface-hover: #18181B;
+  --color-terminal: #4ADE80;
+  --color-terminal-dim: #22C55E;
+  --color-cyan: #22D3EE;
+  --color-amber: #FBBF24;
+  --color-keyword: #A78BFA;
+  --color-string: #FBBF24;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #09090B;
+  --foreground: #FAFAFA;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Subtle grid */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+/* Terminal window panel */
+.terminal-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.terminal-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #0C0C0E;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+/* Section comment style */
+.section-comment {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-subtle);
+}
+
+.section-comment .num {
+  color: var(--color-keyword);
+}
+
+.section-comment .name {
+  color: var(--color-terminal);
+}
+
+/* Tags */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-cyan);
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.15);
+  border-radius: 6px;
+}
+
+/* Prompt colors */
+.prompt-user { color: var(--color-terminal); }
+.prompt-path { color: var(--color-cyan); }
+.prompt-symbol { color: var(--color-muted); }
+.output-text { color: var(--color-muted); }
+.output-highlight { color: var(--color-foreground); }
+.output-keyword { color: var(--color-keyword); }
+.output-string { color: var(--color-amber); }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #3F3F46;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #52525B;
+}
+
+::selection {
+  background: rgba(74, 222, 128, 0.25);
+  color: #FAFAFA;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.5s ease forwards;
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slide-up 0.3s ease forwards;
+}
+
+/* Project vertical slider */
+.project-slider-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #3F3F46 transparent;
+}
+.project-slider-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.project-slider-scroll::-webkit-scrollbar-thumb {
+  background: #3F3F46;
+  border-radius: 2px;
+}
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Focus ring for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-terminal);
+  outline-offset: 2px;
 }

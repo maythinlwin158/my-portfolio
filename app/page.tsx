@@ -1,65 +1,221 @@
-import Image from "next/image";
+'use client';
+
+import { usePortfolioStore } from './store/portfolioStore';
+import { Mail, MapPin } from 'lucide-react';
+import SkillCard from './components/SkillCard';
+import Timeline from './components/Timeline';
+import ContactForm from './components/ContactForm';
+import SectionHeader from './components/SectionHeader';
+import HeroTerminal from './components/HeroTerminal';
+import TerminalPanel from './components/TerminalPanel';
+import ProjectSlider from './components/ProjectSlider';
+import DownloadCVButton from './components/DownloadCVButton';
+import { portfolioData } from './lib/portfolio';
+import { getSkillIcon } from './lib/skillIcons';
+
+const { profile, social, sections, skills, experience, projects } = portfolioData;
 
 export default function Home() {
+  const toggleTerminal = usePortfolioStore((s) => s.toggleTerminal);
+
+  const GithubIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+      <path d="M9 18c-4.51 2-5-2-7-2"/>
+    </svg>
+  );
+
+  const LinkedinIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+      <rect width="4" height="12" x="2" y="9"/>
+      <circle cx="4" cy="4" r="2"/>
+    </svg>
+  );
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="flex-1 relative z-10">
+      {/* Hero */}
+      <section id="home" className="max-w-6xl mx-auto px-5 md:px-6 pt-12 pb-20 md:pt-16 md:pb-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          <div className="animate-fade-up">
+            <p className="font-mono text-sm text-terminal mb-4 flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-terminal animate-pulse" />
+              {profile.availability}
+            </p>
+
+            <h1 className="text-4xl sm:text-5xl md:text-[3.25rem] font-bold text-foreground leading-[1.1] tracking-tight mb-5">
+              {profile.name}
+            </h1>
+
+            <p className="font-mono text-base text-cyan mb-4">{profile.title}</p>
+
+            <p className="text-muted leading-relaxed mb-8 max-w-md">{profile.tagline}</p>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                type="button"
+                onClick={toggleTerminal}
+                className="px-5 py-2.5 rounded-lg bg-terminal text-background font-mono text-sm font-medium hover:bg-terminal-dim transition-colors"
+              >
+                $ open terminal
+              </button>
+              <DownloadCVButton variant="secondary" label="$ download cv" />
+              <a
+                href={social.email}
+                className="px-5 py-2.5 rounded-lg border border-border font-mono text-sm text-muted hover:text-foreground hover:border-terminal/30 transition-colors"
+              >
+                contact
+              </a>
+            </div>
+
+            <div className="flex items-center gap-4 mt-8">
+              <a href={social.github} className="text-subtle hover:text-terminal transition-colors" aria-label="GitHub">
+                <GithubIcon />
+              </a>
+              <a href={social.linkedin} className="text-subtle hover:text-terminal transition-colors" aria-label="LinkedIn">
+                <LinkedinIcon />
+              </a>
+              <a href={social.email} className="text-subtle hover:text-terminal transition-colors" aria-label="Email">
+                <Mail size={20} />
+              </a>
+            </div>
+          </div>
+
+          <div className="animate-fade-up" style={{ animationDelay: '0.15s' }}>
+            <HeroTerminal />
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="border-t border-border">
+        <div className="max-w-6xl mx-auto px-5 md:px-6 py-16 md:py-24">
+          <SectionHeader
+            number={sections.about.number}
+            name={sections.about.name}
+            description={sections.about.description}
+          />
+          <TerminalPanel title={sections.about.terminalPanelTitle ?? 'cat about.md'}>
+            <div className="font-mono text-sm space-y-4 text-muted leading-relaxed">
+              {sections.about.codeSnippet && (
+                <p>
+                  <span className="text-keyword">const</span>{' '}
+                  <span className="text-foreground">{sections.about.codeSnippet.variable}</span>{' '}
+                  <span className="text-subtle">=</span>{' '}
+                  <span className="text-string">&quot;{sections.about.codeSnippet.value}&quot;</span>
+                  <span className="text-subtle">;</span>
+                </p>
+              )}
+              {sections.about.paragraphs?.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)} className="text-muted">{paragraph}</p>
+              ))}
+              <div className="flex flex-wrap gap-5 pt-2 text-sm">
+                <span className="flex items-center gap-2 text-subtle">
+                  <MapPin size={14} className="text-terminal" />
+                  {profile.location}
+                </span>
+                <a href={social.email} className="flex items-center gap-2 text-subtle hover:text-terminal transition-colors">
+                  <Mail size={14} className="text-terminal" />
+                  {profile.email}
+                </a>
+              </div>
+            </div>
+          </TerminalPanel>
+        </div>
+      </section>
+
+      {/* Experience */}
+      <section id="experience" className="border-t border-border bg-surface/50">
+        <div className="max-w-6xl mx-auto px-5 md:px-6 py-16 md:py-24">
+          <SectionHeader
+            number={sections.experience.number}
+            name={sections.experience.name}
+            description={sections.experience.description}
+          />
+          <Timeline items={experience} />
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="border-t border-border">
+        <div className="max-w-6xl mx-auto px-5 md:px-6 py-16 md:py-24">
+          <SectionHeader
+            number={sections.projects.number}
+            name={sections.projects.name}
+            description={sections.projects.description}
+          />
+          <ProjectSlider projects={projects} />
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section id="skills" className="border-t border-border bg-surface/50">
+        <div className="max-w-6xl mx-auto px-5 md:px-6 py-16 md:py-24">
+          <SectionHeader
+            number={sections.skills.number}
+            name={sections.skills.name}
+            description={sections.skills.description}
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {skills.map((category) => (
+              <SkillCard
+                key={category.id}
+                title={category.title}
+                icon={getSkillIcon(category.icon)}
+                skills={category.items}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="border-t border-border">
+        <div className="max-w-6xl mx-auto px-5 md:px-6 py-16 md:py-24">
+          <SectionHeader
+            number={sections.contact.number}
+            name={sections.contact.name}
+            description={sections.contact.description}
+          />
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+            <div className="lg:col-span-2 space-y-4">
+              <TerminalPanel title="contact --info">
+                <div className="font-mono text-sm space-y-3 text-muted">
+                  <p>
+                    <span className="text-keyword">email</span>:{' '}
+                    <a href={social.email} className="text-cyan hover:text-terminal transition-colors">{profile.email}</a>
+                  </p>
+                  <p><span className="text-keyword">phone</span>: <span className="text-foreground">{profile.phone}</span></p>
+                  <p><span className="text-keyword">location</span>: <span className="text-foreground">{profile.locationShort}</span></p>
+                  <p><span className="text-keyword">status</span>: <span className="text-terminal">{profile.status}</span></p>
+                  <div className="pt-2">
+                    <DownloadCVButton variant="secondary" label="$ download cv" className="w-full sm:w-auto" />
+                  </div>
+                </div>
+              </TerminalPanel>
+            </div>
+            <div className="lg:col-span-3">
+              <TerminalPanel title="send-message.sh">
+                <ContactForm />
+              </TerminalPanel>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-border py-8">
+        <div className="max-w-6xl mx-auto px-5 md:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="font-mono text-xs text-subtle">
+            © {new Date().getFullYear()} {profile.name}
+          </p>
+          <p className="font-mono text-xs text-subtle">
+            Built with {portfolioData.footer.builtWith} · Press{' '}
+            <kbd className="px-1.5 py-0.5 rounded bg-surface border border-border text-muted">`</kbd>{' '}
+            for terminal
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </footer>
+    </main>
   );
 }

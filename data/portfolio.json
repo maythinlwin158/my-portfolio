@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "title": "May Thin Lwin | Senior Full-Stack Software Engineer",
+    "description": "Portfolio of May Thin Lwin, a Senior Full-Stack Software Engineer based in Yangon, Myanmar, specializing in scalable web applications and enterprise systems."
+  },
+  "profile": {
+    "name": "May Thin Lwin",
+    "username": "maythinlwin",
+    "title": "Senior Full-Stack Software Engineer",
+    "tagline": "9+ years building high-performance web applications, microservices, and enterprise systems for corporate groups and international clients.",
+    "availability": "Available for new opportunities",
+    "location": "Myaynigone, Yangon, Myanmar",
+    "locationShort": "Yangon, Myanmar",
+    "email": "maythinlwin1996@gmail.com",
+    "phone": "09783276825",
+    "status": "open to opportunities"
+  },
+  "cv": {
+    "href": "/cv/may-thin-lwin-cv.pdf",
+    "filename": "May_Thin_Lwin_CV.pdf"
+  },
+  "social": {
+    "github": "#",
+    "linkedin": "https://www.linkedin.com/in/may-thin-lwin/",
+    "email": "mailto:maythinlwin1996@gmail.com"
+  },
+  "navigation": [
+    { "id": "about", "label": "about" },
+    { "id": "experience", "label": "experience" },
+    { "id": "projects", "label": "projects" },
+    { "id": "skills", "label": "skills" },
+    { "id": "contact", "label": "contact" }
+  ],
+  "sections": {
+    "about": {
+      "number": "01",
+      "name": "about",
+      "description": "Full-stack engineer with deep experience across the entire software lifecycle.",
+      "terminalPanelTitle": "cat about.md",
+      "codeSnippet": {
+        "variable": "engineer",
+        "value": "Senior Full-Stack Software Engineer"
+      },
+      "paragraphs": [
+        "Nearly 9 years engineering high-performance web applications, microservices, and enterprise ecosystems — from legacy refactoring and secure backend APIs (Laravel, Node.js, NestJS, Express.js, Spring Boot) to type-safe frontend architectures (Vue.js, React, Next.js, TypeScript).",
+        "Proven track record leading development teams, driving engineering best practices, and delivering scalable solutions that reduce administrative overhead and technical debt."
+      ]
+    },
+    "experience": {
+      "number": "02",
+      "name": "experience",
+      "description": "Leading teams and shipping enterprise-grade products since 2017."
+    },
+    "projects": {
+      "number": "03",
+      "name": "projects",
+      "description": "Scroll vertically through selected work — or use the nav rail and arrow keys."
+    },
+    "skills": {
+      "number": "04",
+      "name": "skills",
+      "description": "Technologies I use to build and ship production systems."
+    },
+    "contact": {
+      "number": "05",
+      "name": "contact",
+      "description": "Have a project or opportunity? Send a message — I typically respond within 24 hours.",
+      "responseTime": "I typically respond within 24 hours"
+    }
+  },
+  "heroTerminal": {
+    "bootLines": [
+      { "command": "whoami", "output": "may-thin-lwin", "type": "output" },
+      { "command": "cat role.txt", "output": "Senior Full-Stack Software Engineer", "type": "output" },
+      { "command": "cat location.txt", "output": "Yangon, Myanmar · Available for opportunities", "type": "output" },
+      { "command": "ls skills/", "output": "Laravel  Node.js  Vue.js  TypeScript  PostgreSQL  AWS", "type": "output" },
+      { "command": "echo \"Type help to explore →\"", "output": "Type help to explore →", "type": "hint" }
+    ]
+  },
+  "skills": [
+    {
+      "id": "languages",
+      "title": "Languages",
+      "icon": "cpu",
+      "items": ["PHP", "Node.js", "TypeScript", "JavaScript", "Java", "HTML/CSS"]
+    },
+    {
+      "id": "frameworks",
+      "title": "Frameworks & Libraries",
+      "icon": "layout",
+      "items": ["Laravel", "React", "Next.js", "Vue.js", "Nuxt.js", "NestJS", "Express.js", "Spring Boot", "Phalcon", "Zend"]
+    },
+    {
+      "id": "databases",
+      "title": "Databases & APIs",
+      "icon": "database",
+      "items": ["MySQL", "PostgreSQL", "REST", "GraphQL", "Hibernate", "Swagger"]
+    },
+    {
+      "id": "devops",
+      "title": "DevOps & Tools",
+      "icon": "server",
+      "items": ["AWS", "Docker", "Git", "Apache", "Nginx", "CI/CD"]
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp1",
+      "role": "Senior Software Engineer",
+      "company": "Onenex (Yoma Strategic Holdings Ltd.)",
+      "period": "Oct 2023 — Present",
+      "location": "Yangon, Myanmar (Hybrid)",
+      "description": "Led the complete overhaul and modernization of an outdated, high-maintenance legacy system into a fast, automated HRIS Platform, significantly improving system performance.",
+      "highlights": [
+        "Engineered scalable Node.js cron-job microservices for complex leave cycle resets and automated data regenerations.",
+        "Designed dynamic approval workflows and automated notifications using Laravel and Node.js.",
+        "Implemented secure asset pipelines by integrating AWS S3 storage for file, image, document uploads and downloads.",
+        "Optimized dashboard performance and database queries to render complex relational metrics in real-time."
+      ],
+      "techStack": ["Laravel", "Node.js", "Vue.js", "PostgreSQL", "MySQL", "AWS S3", "RESTful APIs", "GraphQL"]
+    },
+    {
+      "id": "exp2",
+      "role": "Full Stack Developer · Team Lead",
+      "company": "METATEAM MYANMAR Co.,Ltd (Seattle Consulting)",
+      "period": "Oct 2017 — Oct 2023",
+      "location": "Yangon, Myanmar (On-site)",
+      "description": "Led development teams and engineered solutions ranging from event booking to online learning platforms and complaint management systems.",
+      "highlights": [
+        "Built an Event Booking & Management System specialized in event creation, visitor registration, and data exports.",
+        "Developed an interactive Online Learning Platform with gamification features (achievements, goals, rewards).",
+        "Engineered BroadBand Complaint Management System using Zend and Oracle."
+      ],
+      "techStack": ["Laravel", "Zend", "Phalcon", "Docker", "Microservices", "MSSQL", "Oracle"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Enterprise HRIS Platform (Refactoring & Modernization)",
+      "description": "Enterprise HRIS for HR teams and employee self-service across attendance, leave, payroll, and overtime — built on Laravel REST APIs, Vue.js frontend, Node.js Temporal workflow workers , according to Myanmar payroll compliance (NRC, SSB, tax claims).",
+      "techStack": ["Laravel 13", "Vue 3", "Node.js", "TypeScript", "TanStack Query", "Temporal", "PostgreSQL", "Redis", "AWS", "Docker"],
+      "features": [
+        "Architected Laravel REST APIs using Next Architecture (Domain-Driven design) with type-safe Spatie Data DTOs and generated TypeScript contracts.",
+        "Integrated Temporal workflow workers for durable async processing: bulk imports/exports, leave generation, payroll runs, and notifications.",
+        "Can be defined by roles/modules from the admin platform.",
+        "Multi-auth: OTP, biometric, Azure, Microsoft, device login for mobile/kiosk."
+      ]
+    },
+    {
+      "title": "HR Admin Platform (Multi-Company Workforce Management)",
+      "description": "Enterprise HR admin platform for multi-company workforce management — employees, leave, attendance, payroll, and internal comms in one web workspace.",
+      "techStack": ["Laravel", "Nuxt.js", "Vue 2", "Apollo GraphQL", "REST API", "Laravel Queue Horizon"],
+      "features": [
+        "Laravel Queue Horizon for background job processing.",
+        "Policy-driven leave engine: prorata accrual, rollover, auto-approve, balance checks.",
+        "Payroll pipeline: generation, payslips, income tax, partial payments.",
+        "Bulk import/export for employees, leave, attendance, and payroll data.",
+        "Permission system by roles/modules."
+      ]
+    },
+    {
+      "title": "Point of Sales (POS) System",
+      "description": "Comprehensive POS system with inventory management, stock control, sales tracking, and admin dashboard.",
+      "techStack": ["Laravel", "PostgreSQL", "AdminLTE"],
+      "features": ["Inventory management", "Stock control", "Sales tracking", "Admin dashboard", "User management", "Role management", "Permission management"]
+    },
+    {
+      "title": "Online Learning Platform",
+      "description": "Interactive education web app for grade-based book learning. Users can report, comment, and rate books. Achievements, goals, and rewards included gamification.",
+      "techStack": ["Phalcon", "WordPress", "Line Integration"],
+      "features": ["Grade-based book learning", "Gamification", "Line app integration", "User book ratings","Report", "Comment", "Rate"]
+    },
+    {
+      "title": "E-Commerce Backend",
+      "description": "Created e-commerce website with diverse products. Admin can manage items, while users can order, pay by card/cash, and get home delivery. Implemented features for order processing, product details, and delivery management. Additionally, facilitated export of items information between customers and admin.",
+      "techStack": ["SpringBoot", "JUnit", "Swagger", "Doma2"],
+      "features": ["Order processing", "Product details", "Delivery management", "Export of items information between customers and admin"]
+    }
+  ],
+  "terminal": {
+    "welcomeMessage": "Welcome to May Thin Lwin's portfolio terminal. Type \"help\" to see available commands.",
+    "promptUser": "maythinlwin",
+    "promptHost": "portfolio",
+    "about": "Senior Full-Stack Software Engineer with 9+ years building web apps, microservices, and enterprise systems. Based in Yangon, Myanmar.",
+    "skills": "Languages: PHP, TypeScript, JavaScript, Java\nFrameworks: Laravel, React, Next.js, Vue.js, Spring Boot\nInfra: AWS, Docker, PostgreSQL, MySQL, CI/CD"
+  },
+  "footer": {
+    "builtWith": "Next.js",
+    "terminalHint": "Press ` for terminal"
+  }
+}
