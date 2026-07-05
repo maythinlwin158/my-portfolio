@@ -5,12 +5,24 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 
 export interface Project {
   title: string;
-  description: string;
+  role?: string;
+  context?: string;
+  scale?: string;
+  description?: string;
   techStack: string[];
   techStackLayers?: { layer: string; stack: string }[];
   features?: string[];
   link?: string;
   github?: string;
+}
+
+function projectSummary(project: Project): string {
+  return project.context ?? project.description ?? '';
+}
+
+function navLabel(title: string): string {
+  const short = title.split('(')[0].trim();
+  return short.length > 26 ? `${short.slice(0, 26)}…` : short;
 }
 
 interface ProjectSliderProps {
@@ -128,7 +140,7 @@ export default function ProjectSlider({ projects }: ProjectSliderProps) {
                     isActive ? 'text-foreground' : 'text-muted group-hover:text-foreground'
                   }`}
                 >
-                  {project.title}
+                  {navLabel(project.title)}
                 </span>
               </button>
             );
@@ -178,7 +190,7 @@ export default function ProjectSlider({ projects }: ProjectSliderProps) {
 
           <div
             ref={scrollRef}
-            className="project-slider-scroll h-[440px] md:h-[500px] overflow-y-auto overscroll-y-contain rounded-xl border border-border bg-surface/50 snap-y snap-mandatory scroll-smooth"
+            className="project-slider-scroll h-[480px] md:h-[580px] overflow-y-auto overscroll-y-contain rounded-xl border border-border bg-surface/50 snap-y snap-mandatory scroll-smooth"
             aria-label="Projects slider"
           >
             {projects.map((project, i) => (
@@ -195,20 +207,34 @@ export default function ProjectSlider({ projects }: ProjectSliderProps) {
                   }`}
                 >
                   <div className="flex items-start justify-between gap-4 mb-4">
-                    <div>
-                      <span className="font-mono text-xs text-terminal mb-2 block">
-                        project[{i}] · {String(i + 1).padStart(2, '0')}
-                      </span>
-                      <h3 className="font-mono text-xl md:text-2xl text-foreground">{project.title}</h3>
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        <span className="font-mono text-xs text-terminal">
+                          project[{i}] · {String(i + 1).padStart(2, '0')}
+                        </span>
+                        {project.role && (
+                          <span className="font-mono text-[10px] uppercase tracking-wider text-cyan bg-cyan/10 border border-cyan/20 px-2 py-0.5 rounded">
+                            {project.role}
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="font-mono text-lg md:text-xl text-foreground leading-snug">{project.title}</h3>
                     </div>
                   </div>
 
-                  <p className="text-muted text-sm md:text-base leading-relaxed mb-5 flex-grow">
-                    {project.description}
+                  <p className="text-muted text-sm md:text-base leading-relaxed mb-4">
+                    {projectSummary(project)}
                   </p>
 
+                  {project.scale && (
+                    <div className="scale-callout mb-4">
+                      <span className="text-[10px] uppercase tracking-widest text-subtle block mb-1">scale</span>
+                      {project.scale}
+                    </div>
+                  )}
+
                   {project.features && project.features.length > 0 && (
-                    <ul className="space-y-2 mb-5">
+                    <ul className="space-y-2 mb-4">
                       {project.features.map((feature) => (
                         <li key={feature} className="text-sm text-muted flex items-start gap-2.5">
                           <span className="text-terminal shrink-0 font-mono">›</span>
@@ -218,31 +244,10 @@ export default function ProjectSlider({ projects }: ProjectSliderProps) {
                     </ul>
                   )}
 
-                  <div className="pt-4 border-t border-border mt-auto space-y-3">
-                    {project.techStackLayers && project.techStackLayers.length > 0 ? (
-                      <div className="space-y-2">
-                        <p className="font-mono text-[10px] uppercase tracking-widest text-subtle">Tech stack</p>
-                        <div className="rounded-lg border border-border overflow-hidden text-sm">
-                          {project.techStackLayers.map(({ layer, stack }) => (
-                            <div
-                              key={layer}
-                              className="grid grid-cols-[88px_1fr] sm:grid-cols-[100px_1fr] border-b border-border last:border-b-0"
-                            >
-                              <span className="px-3 py-2 font-mono text-xs text-terminal bg-terminal/5 border-r border-border">
-                                {layer}
-                              </span>
-                              <span className="px-3 py-2 text-muted leading-snug">{stack}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="flex flex-wrap gap-1.5">
-                        {project.techStack.map((tech) => (
-                          <span key={tech} className="tag">{tech}</span>
-                        ))}
-                      </div>
-                    )}
+                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-border mt-auto">
+                    {project.techStack.map((tech) => (
+                      <span key={tech} className="tag">{tech}</span>
+                    ))}
                   </div>
                 </article>
               </div>

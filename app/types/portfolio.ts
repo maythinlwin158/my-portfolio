@@ -1,21 +1,35 @@
 export type SkillIconKey = 'cpu' | 'layout' | 'database' | 'server';
 
+export interface HeroStat {
+  label: string;
+  value: string;
+}
+
+export interface ExperienceScope {
+  domain: string;
+  building: string[];
+  serving: string;
+}
+
 export interface PortfolioProfile {
   name: string;
   username: string;
   title: string;
+  focus?: string;
   tagline: string;
   availability: string;
   location: string;
   locationShort: string;
   email: string;
-  phone: string;
+  phone?: string;
   status: string;
+  heroStats?: HeroStat[];
 }
 
 export interface PortfolioCV {
   href: string;
   filename: string;
+  lastUpdated?: string;
 }
 
 export interface PortfolioSocial {
@@ -58,21 +72,21 @@ export interface PortfolioExperience {
   company: string;
   period: string;
   location: string;
+  team?: string;
+  scope?: ExperienceScope;
   description: string;
   highlights: string[];
   techStack: string[];
 }
 
-export interface TechStackLayer {
-  layer: string;
-  stack: string;
-}
-
 export interface PortfolioProject {
   title: string;
-  description: string;
+  role?: string;
+  context?: string;
+  scale?: string;
+  description?: string;
   techStack: string[];
-  techStackLayers?: TechStackLayer[];
+  techStackLayers?: { layer: string; stack: string }[];
   features?: string[];
   link?: string;
   github?: string;

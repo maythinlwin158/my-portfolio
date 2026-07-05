@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "title": "May Thin Lwin | Senior Full-Stack Software Engineer",
+    "description": "Portfolio of May Thin Lwin, a Senior Full-Stack Software Engineer based in Yangon, Myanmar, specializing in scalable backend systems and enterprise platforms for HR, payroll, and workforce management."
+  },
+  "profile": {
+    "name": "May Thin Lwin",
+    "username": "maythinlwin",
+    "title": "Senior Full-Stack Software Engineer",
+    "tagline": "Nearly 9 years building high-performance web applications, microservices, and enterprise systems for corporate groups and international clients.",
+    "availability": "Available for new opportunities",
+    "location": "Yangon, Myanmar",
+    "locationShort": "Yangon, Myanmar",
+    "email": "maythinlwin1996@gmail.com",
+    "status": "open to opportunities",
+    "heroStats": [
+      { "label": "Experience", "value": "Nearly 9 years" },
+      { "label": "Leadership", "value": "Up to 12 engineers · 6 years leading" },
+      { "label": "Production scale", "value": "36+ companies · 10k+ payroll runs/month" },
+      { "label": "Stack depth", "value": "Laravel · Node.js · Next.js · Vue.js" }
+    ]
+  },
+  "cv": {
+    "href": "/cv/may-thin-lwin-cv.pdf",
+    "filename": "May_Thin_Lwin_CV.pdf",
+    "lastUpdated": "2026-07"
+  },
+  "social": {
+    "github": "#",
+    "linkedin": "https://www.linkedin.com/in/may-thin-lwin/",
+    "email": "mailto:maythinlwin1996@gmail.com"
+  },
+  "navigation": [
+    { "id": "about", "label": "about" },
+    { "id": "experience", "label": "experience" },
+    { "id": "projects", "label": "projects" },
+    { "id": "skills", "label": "skills" },
+    { "id": "contact", "label": "contact" }
+  ],
+  "sections": {
+    "about": {
+      "number": "01",
+      "name": "about",
+      "description": "Senior full-stack engineer with nearly 9 years of progressively responsible engineering — leading teams and shipping enterprise platforms at scale.",
+      "terminalPanelTitle": "cat about.md",
+      "codeSnippet": {
+        "variable": "engineer",
+        "value": "Senior Full-Stack Software Engineer"
+      },
+      "paragraphs": [
+        "Nearly 9 years of progressively responsible engineering — from owning Laravel + Vue.js + Next.js enterprise platforms and Node.js Temporal workflow workers, to leading a 20-person cross-functional team through architecture, delivery, and people management.",
+        "Currently shipping a multi-company HRIS backend serving 36+ companies and 10,000+ payroll runs/month, with measured wins: dashboard load 45s → 500ms, query latency 10s → 50ms. Depth in Laravel, Node.js, and Vue.js; broad working knowledge across the modern PHP / Node / TypeScript stack."
+      ]
+    },
+    "experience": {
+      "number": "02",
+      "name": "experience",
+      "description": "Leading teams and shipping enterprise platforms since 2017."
+    },
+    "projects": {
+      "number": "03",
+      "name": "projects",
+      "description": "Selected production systems — context, scale, and what I owned."
+    },
+    "skills": {
+      "number": "04",
+      "name": "skills",
+      "description": "Tiered by depth: primary (daily production-grade), production-confident, and project-level exposure."
+    },
+    "contact": {
+      "number": "05",
+      "name": "contact",
+      "description": "Have a project or opportunity? Send a message — I typically respond within 24 hours.",
+      "responseTime": "I typically respond within 24 hours"
+    }
+  },
+  "heroTerminal": {
+    "bootLines": [
+      { "command": "whoami", "output": "may-thin-lwin", "type": "output" },
+      { "command": "cat role.txt", "output": "Senior Full-Stack Software Engineer", "type": "output" },
+      { "command": "cat stack.txt", "output": "Laravel · Node.js · Vue.js (depth) · Next.js · TypeScript · PostgreSQL", "type": "output" },
+      { "command": "cat impact.txt", "output": "HRIS · 36+ companies · 10k payroll runs/mo · 90× faster dashboard and queue processing", "type": "output" },
+      { "command": "echo \"Type help to explore →\"", "output": "Type help to explore →", "type": "hint" }
+    ]
+  },
+  "skills": [
+    {
+      "id": "primary",
+      "title": "Primary (depth · 7+/10)",
+      "icon": "cpu",
+      "items": ["Laravel", "Node.js", "Vue.js", "Next.js"]
+    },
+    {
+      "id": "secondary",
+      "title": "Production-confident",
+      "icon": "layout",
+      "items": [
+        "PHP",
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+        "REST APIs",
+        "GraphQL",
+        "AWS",
+        "Docker",
+        "Git",
+        "CI/CD"
+      ]
+    },
+    {
+      "id": "familiar",
+      "title": "Project-level exposure",
+      "icon": "database",
+      "items": [
+        "Java",
+        "Nuxt.js",
+        "NestJS",
+        "Express.js",
+        "Spring Boot",
+        "TanStack Query",
+        "Temporal",
+        "Phalcon",
+        "Zend",
+        "MSSQL",
+        "Oracle",
+        "Nginx",
+        "Apache",
+        "WordPress"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp1",
+      "role": "Senior Software Engineer",
+      "company": "Onenex (Yoma Strategic Holdings Ltd.)",
+      "period": "Oct 2023 — Present",
+      "location": "Yangon, Myanmar (Hybrid)",
+      "team": "10-person cross-functional",
+      "scope": {
+        "domain": "Multi-company HRIS",
+        "building": ["Laravel REST APIs", "Node.js Temporal workers", "Vue 3 admin UI"],
+        "serving": "Mobile apps & admin web"
+      },
+      "description": "Lead engineer on legacy-to-modern HRIS migration — platform architecture, API design, and workflow orchestration.",
+      "highlights": [
+        "Cut dashboard load time from 45s → 500ms (≈90× faster) on complex relational metrics via query optimization and caching strategy.",
+        "Cut hot-path query latency from 10s → 50ms (≈200× faster) — paths consumed directly by the mobile client.",
+        "Engineered Node.js Temporal workflow workers for durable async processing: bulk imports/exports, leave generation, payroll runs, notifications.",
+        "Built dynamic, role-driven approval workflows spanning Laravel and Node.js service boundaries.",
+        "Designed secure AWS S3 asset pipelines for file, image, and document upload/download flows.",
+        "Implemented policy-driven leave engine: prorata accrual, rollover, auto-approve, balance checks."
+      ],
+      "techStack": [
+        "Laravel 13",
+        "Vue 3",
+        "Node.js",
+        "TypeScript",
+        "Temporal",
+        "PostgreSQL",
+        "Redis",
+        "AWS S3",
+        "TanStack Query",
+        "Docker"
+      ]
+    },
+    {
+      "id": "exp2",
+      "role": "Tech Lead / Engineering Manager",
+      "company": "METATEAM MYANMAR Co.,Ltd (Seattle Consulting)",
+      "period": "Oct 2017 — Oct 2023",
+      "location": "Yangon, Myanmar (On-site)",
+      "team": "20-person cross-functional ",
+      "scope": {
+        "domain": "Enterprise client delivery",
+        "building": ["Architecture & stack decisions", "Phalcon · Zend · Spring Boot systems"],
+        "serving": "13 direct reports · performance reviews · 1:1s"
+      },
+      "description": "Six years leading cross-functional teams shipping event booking, e-learning, and complaint management systems for corporate clients.",
+      "highlights": [
+        "Led a 20-person cross-functional team for 6 years; directly managed 13 engineers.",
+        "Owned architecture and tech-stack decisions across enterprise engagements (Phalcon, Zend, Spring Boot, Oracle, MSSQL).",
+        "Built event booking & management systems with visitor registration and data export workflows.",
+        "Shipped an interactive online learning platform with gamification and Line app integration.",
+        "Engineered a broadband complaint management system on Zend + Oracle."
+      ],
+      "techStack": [
+        "Laravel",
+        "Zend",
+        "Phalcon",
+        "Spring Boot",
+        "Docker",
+        "Microservices",
+        "MSSQL",
+        "Oracle",
+        "WordPress"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Enterprise HRIS Platform (Refactoring & Modernization)",
+      "role": "Lead Engineer",
+      "context": "Multi-company HRIS for HR teams and employee self-service — attendance, leave, payroll, overtime. Built on Laravel REST APIs, Vue 3 frontend, and Node.js Temporal workflow workers, per Myanmar payroll compliance (NRC, SSB, tax claims).",
+      "scale": "36+ companies · 10,000+ payroll runs/mo · dashboard 45s → 500ms · queries 10s → 50ms · mobile clients consuming the API",
+      "techStack": [
+        "Laravel 13",
+        "Vue 3",
+        "Node.js",
+        "TypeScript",
+        "TanStack Query",
+        "Temporal",
+        "PostgreSQL",
+        "Redis",
+        "AWS S3",
+        "Docker"
+      ],
+      "features": [
+        "Architected Laravel REST APIs using Domain-Driven Design with type-safe Spatie Data DTOs and generated TypeScript contracts.",
+        "Integrated Temporal workflow workers for durable async processing: bulk imports/exports, leave generation, payroll runs, notifications.",
+        "Multi-auth: OTP, biometric, Azure AD, Microsoft, device login for mobile and kiosk.",
+        "Role/module-driven admin platform for HR configuration."
+      ]
+    },
+    {
+      "title": "HR Admin Platform (Multi-Company Workforce Management)",
+      "role": "Lead Engineer",
+      "context": "Enterprise HR admin platform — employees, leave, attendance, payroll, and internal comms in one web workspace.",
+      "scale": "Multi-company · policy-driven leave engine · payroll pipeline",
+      "techStack": [
+        "Laravel",
+        "Nuxt.js",
+        "Vue 2",
+        "Apollo GraphQL",
+        "REST API",
+        "Laravel Queue Horizon"
+      ],
+      "features": [
+        "Laravel Queue Horizon for background job processing.",
+        "Policy-driven leave engine: prorata accrual, rollover, auto-approve, balance checks.",
+        "Payroll pipeline: generation, payslips, income tax, partial payments.",
+        "Bulk import/export for employees, leave, attendance, payroll data.",
+        "Permission system by roles/modules."
+      ]
+    },
+    {
+      "title": "Software House Marketing & Client Portal (Freelance)",
+      "role": "Full-Stack Developer (Freelance)",
+      "context": "Mobile-first responsive web app for a software house — marketing site plus client-engagement portal. Showcases previous work, partners, team, vision, and mission; lets prospective customers connect directly with the team.",
+      "scale": "Public marketing site + client contact flow · mobile-first · React + Next.js stack",
+      "techStack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Mobile-first responsive design"
+      ],
+      "features": [
+        "Mobile-first responsive layouts across all pages.",
+        "Project showcase: previous works, partners, and team members.",
+        "Company profile: vision and mission.",
+        "Direct client-to-team contact flow for new project inquiries."
+      ]
+    },
+    {
+      "title": "Point of Sales (POS) System",
+      "role": "Full-Stack Developer",
+      "context": "POS system with inventory, stock control, sales tracking, and admin dashboard.",
+      "techStack": ["Laravel", "PostgreSQL", "AdminLTE"],
+      "features": [
+        "Inventory management",
+        "Stock control",
+        "Sales tracking",
+        "Admin dashboard",
+        "User/role/permission management"
+      ]
+    },
+    {
+      "title": "Online Learning Platform",
+      "role": "Full-Stack Developer",
+      "context": "Interactive grade-based book learning — reporting, commenting, rating, and gamification.",
+      "techStack": ["Phalcon", "WordPress", "Line Integration"],
+      "features": [
+        "Grade-based book learning",
+        "Gamification (achievements, goals, rewards)",
+        "Line app integration",
+        "User book ratings"
+      ]
+    },
+    {
+      "title": "E-Commerce Backend",
+      "role": "Backend Developer",
+      "context": "E-commerce backend — product catalog, order processing, card/cash payments, home delivery, admin-customer data exchange.",
+      "techStack": ["Spring Boot", "JUnit", "Swagger", "Doma2"],
+      "features": [
+        "Order processing",
+        "Product details",
+        "Delivery management",
+        "Admin-customer data export"
+      ]
+    }
+  ],
+  "terminal": {
+    "welcomeMessage": "Welcome to May Thin Lwin's portfolio terminal. Type \"help\" to see available commands.",
+    "promptUser": "maythinlwin",
+    "promptHost": "portfolio",
+    "about": "Senior Full-Stack Software Engineer with nearly 9 years building scalable backends and leading teams. Depth in Laravel, Node.js, and Vue.js. Based in Yangon, Myanmar.",
+    "skills": "Primary: Laravel, Node.js, Vue.js\nProduction: TypeScript, React, Next.js, PostgreSQL, Redis, AWS S3, Docker\nFamiliar: Spring Boot, NestJS, Nuxt.js, Temporal, Phalcon, Zend"
+  },
+  "footer": {
+    "builtWith": "Next.js",
+    "terminalHint": "Press ` for terminal"
+  },
+  "_review_notes": {
+    "what_changed": [
+      "Tagline + about: '9+' → 'Nearly 9 years' (matches actual tenure: 6 + 2.75).",
+      "experience[1].role: 'Full Stack Developer · Team Lead' → 'Tech Lead / Engineering Manager' (matches 20-person team scope).",
+      "experience[1].description: 1 vague sentence → scope + team + tech-stack context.",
+      "experience[0].highlights: 4 qualitative bullets → 6 quantified bullets (90×, 200×, payroll scale, etc.).",
+      "skills: flat 4-category list → 3-tier depth model (primary / production-confident / familiar) — defends the 7+/10 claim.",
+      "skills: React + Next.js moved from `familiar` to `production-confident` (backed by the new freelance project entry).",
+      "projects: added `role` and `scale` fields so readers see context, not just features.",
+      "projects: added 'Software House Marketing & Client Portal (Freelance)' entry (React + Next.js, mobile-first) — placed at slot 3 to surface breadth right after the two Onenex enterprise projects.",
+      "heroTerminal: replaced generic skills line with stack + impact line.",
+      "Removed phone number from public profile (privacy) — replace with contact form if needed."
+    ],
+    "still_missing": [
+      "Education / certifications — add if you have any (AWS cert, degree, etc.).",
+      "GitHub URL — currently '#'. Fill in or remove.",
+      "METATEAM project-specific scale numbers — you said you don't remember; the rewritten section is honest about that and leads with leadership scope instead.",
+      "Cron-job metric — your phrasing '10 jobs per milliseconds' is mathematically 10k jobs/sec, which is not real. Clarify before it goes on a CV: probably 'cron throughput improved ~60×' or '60 jobs/min → 600 jobs/min' or similar."
+    ]
+  }
+}

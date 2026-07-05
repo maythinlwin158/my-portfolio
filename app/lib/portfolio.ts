@@ -1,7 +1,11 @@
-import rawData from '../../data/portfolio.json';
+import rawData from '../../data/portfolio.improved.json';
 import type { PortfolioData } from '../types/portfolio';
 
 export const portfolioData = rawData as PortfolioData;
+
+export function getProjectSummary(project: PortfolioData['projects'][number]): string {
+  return project.context ?? project.description ?? '';
+}
 
 export function getTerminalProjectsOutput(): string {
   return portfolioData.projects
@@ -17,12 +21,13 @@ export function getTerminalExperienceOutput(): string {
 
 export function getTerminalContactOutput(): string {
   const { profile, social } = portfolioData;
-  return [
+  const lines = [
     `Email: ${profile.email}`,
-    `Phone: ${profile.phone}`,
+    ...(profile.phone ? [`Phone: ${profile.phone}`] : []),
     `Location: ${profile.locationShort}`,
     `LinkedIn: ${social.linkedin.replace('https://', '')}`,
-  ].join('\n');
+  ];
+  return lines.join('\n');
 }
 
 export function getNavigationSectionIds(): string[] {

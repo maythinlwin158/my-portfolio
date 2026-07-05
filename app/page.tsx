@@ -10,6 +10,7 @@ import HeroTerminal from './components/HeroTerminal';
 import TerminalPanel from './components/TerminalPanel';
 import ProjectSlider from './components/ProjectSlider';
 import DownloadCVButton from './components/DownloadCVButton';
+import HeroStats from './components/HeroStats';
 import { portfolioData } from './lib/portfolio';
 import { getSkillIcon } from './lib/skillIcons';
 
@@ -44,13 +45,20 @@ export default function Home() {
               {profile.availability}
             </p>
 
-            <h1 className="text-4xl sm:text-5xl md:text-[3.25rem] font-bold text-foreground leading-[1.1] tracking-tight mb-5">
+            <h1 className="text-4xl sm:text-5xl md:text-[3.25rem] font-bold text-foreground leading-[1.1] tracking-tight mb-3">
               {profile.name}
             </h1>
 
-            <p className="font-mono text-base text-cyan mb-4">{profile.title}</p>
+            <p className="font-mono text-base text-cyan mb-1">{profile.title}</p>
+            {profile.focus && (
+              <p className="font-mono text-sm text-terminal/90 mb-4">{profile.focus}</p>
+            )}
 
-            <p className="text-muted leading-relaxed mb-8 max-w-md">{profile.tagline}</p>
+            <p className="text-muted leading-relaxed mb-6 max-w-md text-sm md:text-base">{profile.tagline}</p>
+
+            {profile.heroStats && profile.heroStats.length > 0 && (
+              <HeroStats stats={profile.heroStats} />
+            )}
 
             <div className="flex flex-wrap items-center gap-3">
               <button
@@ -157,13 +165,14 @@ export default function Home() {
             name={sections.skills.name}
             description={sections.skills.description}
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {skills.map((category) => (
               <SkillCard
                 key={category.id}
                 title={category.title}
                 icon={getSkillIcon(category.icon)}
                 skills={category.items}
+                tier={category.id === 'primary' ? 'primary' : category.id === 'secondary' ? 'secondary' : 'familiar'}
               />
             ))}
           </div>
@@ -186,9 +195,14 @@ export default function Home() {
                     <span className="text-keyword">email</span>:{' '}
                     <a href={social.email} className="text-cyan hover:text-terminal transition-colors">{profile.email}</a>
                   </p>
-                  <p><span className="text-keyword">phone</span>: <span className="text-foreground">{profile.phone}</span></p>
+                  {profile.phone && (
+                    <p><span className="text-keyword">phone</span>: <span className="text-foreground">{profile.phone}</span></p>
+                  )}
                   <p><span className="text-keyword">location</span>: <span className="text-foreground">{profile.locationShort}</span></p>
                   <p><span className="text-keyword">status</span>: <span className="text-terminal">{profile.status}</span></p>
+                  {portfolioData.cv.lastUpdated && (
+                    <p><span className="text-keyword">cv</span>: <span className="text-foreground">updated {portfolioData.cv.lastUpdated}</span></p>
+                  )}
                   <div className="pt-2">
                     <DownloadCVButton variant="secondary" label="$ download cv" className="w-full sm:w-auto" />
                   </div>
