@@ -25,6 +25,9 @@ export function getTerminalContactOutput(): string {
     `Email: ${profile.email}`,
     ...(profile.phone ? [`Phone: ${profile.phone}`] : []),
     `Location: ${profile.locationShort}`,
+    ...(profile.education ? [`Education: ${profile.education}`] : []),
+    ...(profile.englishLevel ? [`English: ${profile.englishLevel}`] : []),
+    ...(profile.japaneseLevel ? [`Japanese: ${profile.japaneseLevel}`] : []),
     `LinkedIn: ${social.linkedin.replace('https://', '')}`,
   ];
   return lines.join('\n');

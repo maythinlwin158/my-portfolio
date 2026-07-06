@@ -1,7 +1,7 @@
 'use client';
 
 import { usePortfolioStore } from './store/portfolioStore';
-import { Mail, MapPin } from 'lucide-react';
+import { GraduationCap, Languages, Mail, MapPin } from 'lucide-react';
 import SkillCard from './components/SkillCard';
 import Timeline from './components/Timeline';
 import ContactForm from './components/ContactForm';
@@ -127,6 +127,18 @@ export default function Home() {
                   <Mail size={14} className="text-terminal" />
                   {profile.email}
                 </a>
+                {profile.education && (
+                  <span className="flex items-center gap-2 text-subtle">
+                    <GraduationCap size={14} className="text-terminal" />
+                    {profile.education}
+                  </span>
+                )}
+                {(profile.englishLevel || profile.japaneseLevel) && (
+                  <span className="flex items-center gap-2 text-subtle">
+                    <Languages size={14} className="text-terminal" />
+                    {[profile.englishLevel, profile.japaneseLevel].filter(Boolean).join(' · ')}
+                  </span>
+                )}
               </div>
             </div>
           </TerminalPanel>
@@ -199,6 +211,15 @@ export default function Home() {
                     <p><span className="text-keyword">phone</span>: <span className="text-foreground">{profile.phone}</span></p>
                   )}
                   <p><span className="text-keyword">location</span>: <span className="text-foreground">{profile.locationShort}</span></p>
+                  {profile.education && (
+                    <p><span className="text-keyword">education</span>: <span className="text-foreground">{profile.education}</span></p>
+                  )}
+                  {profile.englishLevel && (
+                    <p><span className="text-keyword">english</span>: <span className="text-foreground">{profile.englishLevel}</span></p>
+                  )}
+                  {profile.japaneseLevel && (
+                    <p><span className="text-keyword">japanese</span>: <span className="text-foreground">{profile.japaneseLevel}</span></p>
+                  )}
                   <p><span className="text-keyword">status</span>: <span className="text-terminal">{profile.status}</span></p>
                   {portfolioData.cv.lastUpdated && (
                     <p><span className="text-keyword">cv</span>: <span className="text-foreground">updated {portfolioData.cv.lastUpdated}</span></p>

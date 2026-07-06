@@ -13,6 +13,9 @@
     "locationShort": "Yangon, Myanmar",
     "email": "maythinlwin1996@gmail.com",
     "status": "open to opportunities",
+    "education": "B.C.Sc Computer Science · University of Computer Studies (Yangon)",
+    "englishLevel": "Conversational English",
+    "japaneseLevel": "JLPT N3 (passed)",
     "heroStats": [
       { "label": "Experience", "value": "Nearly 9 years" },
       { "label": "Leadership", "value": "Up to 12 engineers · 6 years leading" },
@@ -26,7 +29,7 @@
     "lastUpdated": "2026-07"
   },
   "social": {
-    "github": "#",
+    "github": "https://github.com/maythinlwin158",
     "linkedin": "https://www.linkedin.com/in/may-thin-lwin/",
     "email": "mailto:maythinlwin1996@gmail.com"
   },
@@ -80,6 +83,8 @@
       { "command": "cat role.txt", "output": "Senior Full-Stack Software Engineer", "type": "output" },
       { "command": "cat stack.txt", "output": "Laravel · Node.js · Vue.js (depth) · Next.js · TypeScript · PostgreSQL", "type": "output" },
       { "command": "cat impact.txt", "output": "HRIS · 36+ companies · 10k payroll runs/mo · 90× faster dashboard and queue processing", "type": "output" },
+      { "command": "cat education.txt", "output": "B.C.Sc Computer Science · UCS(Yangon)", "type": "output" },
+      { "command": "cat languages.txt", "output": "English: Conversational · Japanese: JLPT N3 (passed)", "type": "output" },
       { "command": "echo \"Type help to explore →\"", "output": "Type help to explore →", "type": "hint" }
     ]
   },
@@ -327,7 +332,7 @@
       "Removed phone number from public profile (privacy) — replace with contact form if needed."
     ],
     "still_missing": [
-      "Education / certifications — add if you have any (AWS cert, degree, etc.).",
+      "Additional certifications (e.g. AWS) — add if you earn any.",
       "GitHub URL — currently '#'. Fill in or remove.",
       "METATEAM project-specific scale numbers — you said you don't remember; the rewritten section is honest about that and leads with leadership scope instead.",
       "Cron-job metric — your phrasing '10 jobs per milliseconds' is mathematically 10k jobs/sec, which is not real. Clarify before it goes on a CV: probably 'cron throughput improved ~60×' or '60 jobs/min → 600 jobs/min' or similar."

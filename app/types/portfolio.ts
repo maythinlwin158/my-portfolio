@@ -23,6 +23,9 @@ export interface PortfolioProfile {
   email: string;
   phone?: string;
   status: string;
+  education?: string;
+  englishLevel?: string;
+  japaneseLevel?: string;
   heroStats?: HeroStat[];
 }
 
