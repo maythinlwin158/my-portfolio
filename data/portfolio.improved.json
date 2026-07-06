@@ -270,6 +270,28 @@
       ]
     },
     {
+      "title": "Personal Engineer Portfolio Website",
+      "role": "Full-Stack Developer · Personal Project",
+      "context": "Terminal-inspired portfolio for showcasing experience, projects, skills, and contact — built as a content-driven Next.js app with a developer-first UX (keyboard shortcuts, scroll sections, interactive terminal).",
+      "scale": "Personal brand site · mobile-first · JSON content model · server-side contact delivery",
+      "techStack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Zustand",
+        "Resend",
+        "Server Actions"
+      ],
+      "features": [
+        "JSON-driven content for profile, experience, tiered skills, and project case studies.",
+        "Interactive terminal overlay with section navigation and keyboard shortcuts.",
+        "Vertical project slider and experience timeline for scannable storytelling.",
+        "Contact form via Next.js Server Actions with Resend email delivery and shared client/server validation.",
+        "Responsive layout with CV download, social links, and education/language profile details."
+      ]
+    },
+    {
       "title": "Point of Sales (POS) System",
       "role": "Full-Stack Developer",
       "context": "POS system with inventory, stock control, sales tracking, and admin dashboard.",
@@ -328,6 +350,7 @@
       "skills: React + Next.js moved from `familiar` to `production-confident` (backed by the new freelance project entry).",
       "projects: added `role` and `scale` fields so readers see context, not just features.",
       "projects: added 'Software House Marketing & Client Portal (Freelance)' entry (React + Next.js, mobile-first) — placed at slot 3 to surface breadth right after the two Onenex enterprise projects.",
+      "projects: added 'Personal Engineer Portfolio Website' entry — documents this site (Next.js, Server Actions, Resend, JSON-driven content).",
       "heroTerminal: replaced generic skills line with stack + impact line.",
       "Removed phone number from public profile (privacy) — replace with contact form if needed."
     ],
